@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2>Module registration form</h2>
+        </div>
+      <div class="card-body">
+          
+          <form (submit)="onRegistrationSubmit()"  #f="ngForm">
+            <div class="form-group">
+              <label>Module Code:</label>
+              <input required pattern="^[A-Z]{2}[0-9]{4}$" type="text" class="form-control" [(ngModel)]="moduleCode" name="ModuleCode" #module1="ngModel">
+
+              <div class="form-text text-danger" *ngIf="module1.touched && !module1.valid">
+                  <small *ngIf="module1.errors.required">Module code is required!</small>
+                  <small *ngIf="module1.errors.pattern">Invalid module code format!</small>
+              </div>
+            </div>
+
+            <input type="submit" class="btn btn-danger" value="Register" [disabled]="!f.valid">
+          </form>
+        </div>
+      </div>
+    </div>
+

@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2>Messages</h2>
+          </div>
+        <div class="card-body">
+
+          <div *ngFor="let message of moduleMessages" class="alert alert-danger" role="alert">
+            {{message.content}}
+          </div>
+          <div *ngFor="let message of reCorrectionMessages" class="alert alert-info" role="alert">
+            {{message.content}}
+          </div>
+        </div>
+      </div>
+    </div>
